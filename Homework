@@ -1,0 +1,28 @@
+'use strict';
+
+function BinarioADecimal(num) {
+let decimal= 0;
+const length = num.length;
+for (let i = 0; i < length; i++){
+   const numero = parseInt(num[length - 1 - i]);
+
+   const numeroDecimal = numero * Math.pow(2, i);
+   decimal += numeroDecimal;
+}
+return decimal;
+}
+
+function DecimalABinario(num) {
+   let binario = '';
+   while (num > 0 ) {
+      const residuo = num % 2;
+      binario = residuo + binario;
+      num = Math.floor(num/2)
+   }
+   return binario;
+}
+
+module.exports = {
+   BinarioADecimal,
+   DecimalABinario,
+};
